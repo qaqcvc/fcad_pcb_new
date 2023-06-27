@@ -23,11 +23,15 @@ This folder can be opened in freecad macros setting shown below.
 
 ### 1.1.2 Step 2
 Enable python console.
+
 ![image](https://github.com/qaqcvc/fcad_pcb_new/assets/52302145/fd91a1e2-09ee-454c-a98f-4ebed8371acd)
 
 
-Create a new macro and type these codes:
+Create a new macro:
+
 ![image](https://github.com/qaqcvc/fcad_pcb_new/assets/52302145/54393ca8-f7c9-42d2-b41c-f333dcfc1d43)
+
+and then type these codes:
 
 ```python
 from fcad_pcb import kicad
@@ -53,16 +57,10 @@ Change 'your file location' to your model's location then click Run. The solid c
 If Kicad cannot find fcad_pcb, consider mannually add path, see trouble shooting below.
 
 ### 1.1.3 Step 3
-In case pads are needed (for assigning source and sink), we can use the plugin KiCadStepUP.
+In case pads are needed (for assigning source and sink), we can use the plugin KiCadStepUP. [Kicad Stepup - A freecad plugin](https://www.kicad.org/external-tools/stepup/)
 
 It can read the tracks from the layout file, then unite the copper layers with the pads. 
 
-![[Pasted image 20230302122407.png]]
-Then extrude certain height, e.g., 0.035mm
-Then move pad above the track and merge.
-
-Now the model is ready to go for Ansys simulation like the figure below:
-![[Pasted image 20220901143604.png]]
 
 # 2 Model preparation
 ## 2.1 Vias
@@ -134,7 +132,7 @@ It is related to the layout itself. Probably, the exported model cannot be trans
 The size of the via is too small.
 0.31,0.13 is acceptable
 
-Another possible reason is ill-defined vias. E.g. a micro via is defined as burried via can also cause this problem.
+Another possible reason is ill-defined vias. E.g. a micro via is defined as a burried via can also cause this problem.
 
 ## 3.4 No shape added
 Could be a via issue. Could try change micro vias to through hole vias.

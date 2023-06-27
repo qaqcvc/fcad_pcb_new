@@ -33,19 +33,20 @@ Create a new macro and type these codes:
 from fcad_pcb import kicad
   
 pcb = kicad.KicadFcad(r'your file location')
-# e.g.:
-# pcb = kicad.KicadFcad(r'D:\...\layout.kicad_pcb')
+# e.g.: pcb = kicad.KicadFcad(r'D:\...\layout.kicad_pcb')
 #pcb.makeCoppers()
 # zone_inflate = 0.5*minimum trace width of the zones
 
 pcb.add_feature = False
 
 coppers = pcb.makeCoppers(shape_type='solid', holes=True, fuse=True)
+# fuse means to make vias
 
 Part.show(coppers)
 ```
 
 Change 'your file location' to your model's location then click Run. The solid copper layers will be created including the Vias.
+
 ![image](https://github.com/qaqcvc/fcad_pcb_new/assets/52302145/218288bb-d1f8-4707-90ce-8b180753e368)
 
 
